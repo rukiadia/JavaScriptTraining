@@ -12,6 +12,9 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
       // var ghost = document.querySelector('.firebrick-ghost');
       // element.removeChild(ghost);
 
+      var element = document.querySelector('#firebrick');
+      var ghost = document.querySelector('.firebrick-ghost');
+      element.removeChild(ghost);
 
       var firebrick = document.getElementById('firebrick');
       expect(firebrick.childNodes.length).to.equal(1);
@@ -22,9 +25,10 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
     it('2 番の要素からインベーダー要素を除去する', function() {
 
       // ここにコードを記述してください。
-
+      var invador = document.querySelector('.chocolate-space-invador');
 
       var darkorange = document.getElementById('chocolate');
+      darkorange.removeChild(invador);
       expect(darkorange.childNodes.length).to.equal(1);
       expect(darkorange).to.have.property('textContent', '2');
     });
